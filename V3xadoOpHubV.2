@@ -1,13 +1,20 @@
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
+local MAX_PLAYERS = 48
 
--- Function to check if the server has a maximum of 2 players (potentially a private server)
-local function checkIfPrivateServer()
+-- Function to check if the server is private or full
+local function checkServerStatus()
     local playerCount = #Players:GetPlayers()
-    if LocalPlayer and playerCount <= 2 then
-        -- If there are 1 or 2 players, it's likely a private server
-        LocalPlayer:Kick("NOT WORKING ON PRIVATE SERVER🚨")
-        return true
+    if LocalPlayer then
+        if playerCount <= 2 then
+            -- If there are 1 or 2 players, it's likely a private server
+            LocalPlayer:Kick("NOT WORKING ON PRIVATE SERVER🚨")
+            return true
+        elseif playerCount > MAX_PLAYERS then
+            -- If there are more than MAX_PLAYERS, kick the player
+            LocalPlayer:Kick("SCRIPT ERROR, PLEASE REJOIN.")
+            return true
+        end
     end
     return false
 end
@@ -15,21 +22,21 @@ end
 -- Ensure LocalPlayer is fully loaded
 repeat wait() until LocalPlayer
 
--- Check if it's a private server before executing the loadstring
-if not checkIfPrivateServer() then
+-- Check server status before executing the loadstring
+if not checkServerStatus() then
     -- Wait for a few seconds after the game loads to ensure all players are counted
     wait(5)
     -- Recheck in case a player joined later
-    checkIfPrivateServer()
+    checkServerStatus()
     
-    -- Execute loadstring if not in a private server
+    -- Execute loadstring if not in a private server and the server is not full
     loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/main/V3xadoHubV.2"))()
 end
 
--- If a player joins later, check again
+-- If a player joins later, check the server status again
 Players.PlayerAdded:Connect(function()
-    if checkIfPrivateServer() then
-        -- Optionally, you can handle what happens if a player joins and it's still a private server
+    if checkServerStatus() then
+        -- Optionally, you can handle what happens if a player joins and it's still a private server or the server is full
         -- For example, you might want to recheck or do nothing
     end
 end)
