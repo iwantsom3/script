@@ -25,7 +25,7 @@ repeat wait() until LocalPlayer
 -- Check server status before executing the loadstring
 if not checkServerStatus() then
     -- Wait for a few seconds after the game loads to ensure all players are counted
-    wait(5)
+    wait(3)
     -- Recheck in case a player joined later
     checkServerStatus()
     
