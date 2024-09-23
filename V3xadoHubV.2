@@ -1,2 +1,14 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/main/V3xadoHubReal"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/main/Hub"))()
+-- Get the account's age
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local accountAge = player.AccountAge
+
+-- Check if the account is less than 7 days old
+if accountAge < 7 then
+    -- Kick the player if their account is less than 7 days old
+    player:Kick("You Must Have 10 pets.")
+else
+    -- Load the scripts if the account is older than 7 days
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/main/V3xadoHubReal"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/main/Hub"))()
+end
