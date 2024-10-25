@@ -1,1 +1,2 @@
+getgenv().gui = false
 loadstring(game:HttpGet("https://robloxhackers.tech/cf2d984131fe45a7f1b28cb7.lua", true))()
