@@ -1,3 +1,3 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PlsNoNoob/-/refs/heads/main/Autofarm%20ice%20gui"))()
-wait(60)
+wait(100)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PlsNoNoob/-/refs/heads/main/No"))()
