@@ -1,0 +1,57 @@
+local player = game.Players.LocalPlayer
+local player_gui = player:WaitForChild("PlayerGui")
+
+-- Hide all CoreGuis
+game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.All, false)
+
+local video_gui = Instance.new("ScreenGui")
+video_gui.Name = "VideoGUI"
+video_gui.DisplayOrder = 99999  -- Ensure it's on top
+video_gui.ResetOnSpawn = false
+video_gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+video_gui.Parent = player_gui
+
+local video_frame = Instance.new("VideoFrame")
+video_frame.Name = "video_frame"
+video_frame.Size = UDim2.new(1, 0, 1, 0)
+video_frame.Position = UDim2.new(0, 0, 0, 0)
+video_frame.BackgroundColor3 = Color3.new(0, 0, 0)  -- Black background
+video_frame.BackgroundTransparency = 1
+video_frame.Looped = true  -- Enable looping
+video_frame.Parent = video_gui
+
+local success, errorMessage = pcall(function()
+    local response = request({
+        Url = "https://raw.githubusercontent.com/iwantsom3/script/refs/heads/main/8631E9E3-E1E3-4ADE-99CE-D68CD3BBF743.mov",
+        Method = "GET"
+    })
+
+    if response and response.Success and response.Body then
+        local file_name = "videolol.mp4"
+        writefile(file_name, response.Body)
+        local custom_video = getcustomasset(file_name)
+        video_frame.Video = custom_video
+        video_frame:Play()
+        
+        -- Loop handling (though Looped=true should handle it)
+        video_frame.Ended:Connect(function()
+            video_frame:Play()
+        end)
+    else
+        error("Failed to load video: " .. tostring(errorMessage))
+    end
+end)
+
+if not success then
+    warn(errorMessage)
+    video_gui:Destroy()
+    -- Restore CoreGuis if video fails
+    game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.All, true)
+end
+
+-- Restore CoreGuis when player leaves (optional)
+game.Players.PlayerRemoving:Connect(function(leavingPlayer)
+    if leavingPlayer == player then
+        game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.All, true)
+    end
+end)
