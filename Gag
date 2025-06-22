@@ -1,9 +1,9 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/refs/heads/main/Gago",true))()
-wait(1)
+wait(0.5)
 game.StarterGui:SetCore("SendNotification", {
     Title = "🔔 You must be subscribed to me for 1/2 Day",
     Text = "Detecting...",
-    Duration = 6
+    Duration = 10
 })
 local Spawner = 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/refs/heads/main/Niggggfd.lua"))()
