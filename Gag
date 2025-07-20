@@ -1,3 +1,1 @@
 loadstring(game:HttpGet('https://raw.githubusercontent.com/PlsNoNoob/-/refs/heads/main/Loadload.lua'))()
--- For Mobile Copy:
-loadstring(game:HttpGet("https://cdn.sourceb.in/bins/qpwADeL8rB/0", true))()
