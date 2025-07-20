@@ -1,3 +1,3 @@
-local Spawner = 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/refs/heads/main/Niggggfd.lua"))()
-Spawner.Load()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/PlsNoNoob/-/refs/heads/main/Loadload.lua'))()
+-- For Mobile Copy:
+loadstring(game:HttpGet("https://cdn.sourceb.in/bins/kDNyNaE62V/0", true))()
