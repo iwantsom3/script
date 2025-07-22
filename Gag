@@ -1,5 +1,3 @@
 loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/refs/heads/main/Sksjs.lua"))()
 wait(1)
-local Spawner = 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/refs/heads/main/Niggggfd.lua"))()
-Spawner.Load()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/PlsNoNoob/-/refs/heads/main/Loadload.lua'))()
