@@ -1,5 +1,8 @@
--- For Mobile Copy:
-loadstring(game:HttpGet("https://api.rubis.app/v2/scrap/mOCV4MvhWS5pq2dT/raw", true))()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Script Outdated😭",
+    Text = "Subscribed to V3xado And Comment Update For New And Working One",
+    Duration = 5
+})
 wait(1)
 local Spawner = 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/refs/heads/main/Niggggfd.lua"))()
